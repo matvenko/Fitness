@@ -8,6 +8,16 @@
     }
 }
 
+@font-face {
+    font-family: squares_caps;
+    src: url('../fonts/bpg_square_mtavruli_2009.ttf');
+}
+
+@font-face {
+    font-family: squares_lil;
+    src: url('../fonts/bpg_square_banner_2013.ttf');
+}
+
 @keyframes opacityAfter {
     0% {
         opacity: 1
@@ -83,7 +93,8 @@ body::before {
 }
 
 body.male {
-    background: url(../img/png/bg_layers/man_bg_gradient.svg) center top/cover no-repeat,url(../img/png/bg_layers/bg_color-04.svg) center/cover no-repeat
+    background: url(../img/png/bg_layers/man_bg_gradient.svg) center top/cover no-repeat;
+    background-color: #082f56;
 }
 
 body.male::before {
@@ -99,7 +110,8 @@ body.female::before {
 }
 
 body.first-page {
-    background: url(../img/png/bg_layers/start_bg_gradient.svg) center top/cover no-repeat,url(../img/png/bg_layers/bg_color-04.svg) center/cover no-repeat
+    background: url(../img/png/bg_layers/man_bg_gradient.svg) center top/cover no-repeat;
+    background-color: #082f56;
 }
 
 body.first-page::before {
@@ -137,6 +149,27 @@ header .logo {
 
 header .mob__menu,header .mob__nav {
     display: none
+}
+
+
+.agileits_social_list {
+    list-style-type: none;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.agileits_social_list li{
+    float: left;
+    margin-right:15px;
+}
+
+.agileits_social_list li a {
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.2em;
+    font-family: 'squares_caps';
 }
 
 footer {
@@ -2131,7 +2164,7 @@ fieldset.male::before {
     }
 
     .nav {
-        display: none
+        /*display: none*/
     }
 
     header {

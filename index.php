@@ -20,6 +20,7 @@
     <link rel='manifest' href='themes/fitculator/images/favicons/site.webmanifest' />
 
     <link rel="stylesheet" href="themes/fitculator/css/vendor.css">
+	
     <link rel="stylesheet" href="themes/fitculator/css/main.css"><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -29,24 +30,30 @@
     <title>Fitculator.com - Personalized Meal Plans</title>
 </head>
 <body class="first-page theme male">
+
+<div style="display:none;">
+<?php
+	 require_once("config/functions.php");
+?>
+<link rel="stylesheet" href="css/main_<?php echo $_SESSION['lang']; ?>.css">
+</div>
     <header class="container">
         <div class="logo">
             <img src="themes/fitculator/images/logo.png" alt="Fitculator.com" />
         </div>      
         <div class="nav theme">
-            <div class="agile_social_icons_banner">
+				<!-- <a href="#"><i class="lang" aria-hidden="true" onclick="changelang('geo')"> ქარ </i></a>
+                <a href="#"><i class="lang" aria-hidden="true" onclick="changelang('eng')"> ENG </i></a>
+                <a href="#"><i class="lang" aria-hidden="true" onclick="changelang('rus')"> РУС </i></a> -->
 
+			<div class="agile_social_icons_banner">
                 <ul class="agileits_social_list">
-
-                    <li><a href="#" class="w3_agile_dribble"><i class="lang" aria-hidden="true" onclick="changelang('geo')"> ქარ </i></a></li>
-
-                    <li><a href="#" class="agile_twitter"><i class="lang" aria-hidden="true" onclick="changelang('eng')"> ENG </i></a></li>
-
-                    <li><a href="#" class="w3_agile_vimeo"><i class="lang" aria-hidden="true"> РУС </i></a></li>
-
+                    <li><a href="#"><i class="lang" aria-hidden="true" onclick="changelang('geo')"> ქარ </i></a></li>
+                    <li><a href="#"><i class="lang" aria-hidden="true" onclick="changelang('eng')"> ENG </i></a></li>
+                    <li><a href="#"><i class="lang" aria-hidden="true" onclick="changelang('rus')"> РУС </i></a></li>
                 </ul>
-
             </div>
+
         </div>
         <div class="mob__menu">
             <svg>
@@ -75,25 +82,25 @@
                     <svg>
                         <use xlink:href="themes/fitculator/img/sprite.svg#_icon_set-43"></use>
                     </svg>
-                    <div class="question_text">Back</div>
+                    <div class="question_text"><?php echo BACK; ?></div>
                 </a>
             </div>
         </section>
         <section class="main container">
-            <div class="text-plan">Personalized meal plans to lose weight <span>fast</span><br>Eat well, look <span>amazing!</span></div>
+            <div class="text-plan"><?php echo FIRSTPAGE_TITLE; ?></div>
             <div class="main__header">
-                <div class="h1"> <b>Select your <br>gender</b></div>
+                <div class="h1"> <b><?php echo SELECT_GENDER; ?></b></div>
             </div>
             <div class="main__test choose-gender">
                 <fieldset class="female">
                     <a href="step1" onclick="$('#gotostep1').submit();return false;">
-                        <legend>Female</legend><img src="themes/fitculator/img/png/Asset1.png" alt="">
+                        <legend><?php echo FEMALE; ?></legend><img src="themes/fitculator/img/png/Asset1.png" alt="">
                     </a>
                 </fieldset>
                 <p>or</p>
                 <fieldset class="male">
                     <a href="step1" onclick="$('#gotostep1').submit();return false;">
-                        <legend>Male</legend><img src="themes/fitculator/img/png/Asset3.png" alt="">
+                        <legend><?php echo MALE; ?></legend><img src="themes/fitculator/img/png/Asset3.png" alt="">
                     </a>
                 </fieldset>
             </div>
@@ -101,15 +108,9 @@
         </section>
     </main>
     <footer class="container">
-        <div class="copyright">Copyright © 2019 Fitculator.com. All rights reserved</div>
-        <div class="nav theme male">
-            <a href="javascript:void(0);" onclick="docs.open('privacy-policy');return false;">Privacy Policy</a>
-            <a href="javascript:void(0);" onclick="docs.open('terms');return false;">General Conditions</a>
-            <a href="javascript:void(0)" onclick="docs.open('policy');return false;">Data Protection policy</a>
-            <a href="javascript:void(0)" onclick="docs.open('cookies');return false;">Cookie policy</a>
-        </div>
+        <div class="copyright"></div>
         <div class="footer-text">
-            Fitculator is a great weight-loss program with personalized diet meal plans that focus on keto. Get your 90-Day Keto Meal Plan to achieve your personal weight-loss and fitness goals fast.
+            <?php echo FOOTER_TEXT; ?>
         </div>
     </footer>    <form method='post' id="gotostep1">
         <input type='hidden' name='bidding' value='1' />
