@@ -1,42 +1,10 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
-    <meta name="trustpilot-one-time-domain-verification-id" content="122aaa73-5ac4-44ef-8c01-85e0e5ad42c8" />
-
-    <link rel="icon" href="themes/fitculator/images/favicons/favicon.ico" type="image/x-icon">
-
-    <link rel='apple-touch-icon' href='themes/fitculator/images/favicons/apple/apple-touch-icon.png' />
-    <link rel='apple-touch-icon-precomposed' href='themes/fitculator/images/favicons/apple/apple-touch-icon.png' />
-    <link rel='apple-touch-icon' sizes='120x120' href='themes/fitculator/images/favicons/apple/apple-touch-icon-120x120.png' />
-    <link rel='apple-touch-icon-precomposed' sizes='120x120' href='themes/fitculator/images/favicons/apple/apple-touch-icon-120x120.png' />
-    <link rel='icon' type='image/png' sizes='32x32' href='themes/fitculator/images/favicons/favicon-32x32.png' />
-    <link rel='icon' type='image/png' sizes='16x16' href='themes/fitculator/images/favicons/favicon-16x16.png' />
-    <link rel="mask-icon" href="themes/fitculator/images/favicons/safari-pinned-tab.svg">
-    <link rel='manifest' href='themes/fitculator/images/favicons/site.webmanifest' />
-
-    <link rel="stylesheet" href="themes/fitculator/css/vendor.css">
-	
-    <link rel="stylesheet" href="themes/fitculator/css/main.css"><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <title>Fitculator.com - Personalized Meal Plans</title>
-</head>
+﻿<?php
+	require_once("header_template.php");
+?>
 <body class="first-page theme male">
 
-<div style="display:none;">
-<?php
-	 require_once("config/functions.php");
-?>
 <link rel="stylesheet" href="css/main_<?php echo $_SESSION['lang']; ?>.css">
-</div>
+
     <header class="container">
         <div class="logo">
             <img src="themes/fitculator/images/logo.png" alt="Fitculator.com" />
@@ -93,13 +61,13 @@
             </div>
             <div class="main__test choose-gender">
                 <fieldset class="female">
-                    <a href="step1" onclick="$('#gotostep1').submit();return false;">
+                    <a href="steps.php" onclick="$('#gotostep1').submit();return true;">
                         <legend><?php echo FEMALE; ?></legend><img src="themes/fitculator/img/png/Asset1.png" alt="">
                     </a>
                 </fieldset>
                 <p>or</p>
                 <fieldset class="male">
-                    <a href="step1" onclick="$('#gotostep1').submit();return false;">
+                    <a href="steps.php" onclick="$('#gotostep1').submit();return true;">
                         <legend><?php echo MALE; ?></legend><img src="themes/fitculator/img/png/Asset3.png" alt="">
                     </a>
                 </fieldset>
@@ -112,7 +80,8 @@
         <div class="footer-text">
             <?php echo FOOTER_TEXT; ?>
         </div>
-    </footer>    <form method='post' id="gotostep1">
+    </footer>    
+	<form method='post' id="gotostep1" action="step1.html">
         <input type='hidden' name='bidding' value='1' />
     </form>
     <script src="themes/fitculator/js/vendor.js"></script>

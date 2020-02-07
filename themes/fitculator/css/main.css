@@ -4479,6 +4479,27 @@ footer.container {
         padding-top: 0;
         padding-bottom: 0;
     }
+    .agileits_social_list {
+        list-style-type: none;
+        position: absolute;
+        top: 18px;
+        right: 40px;
+    }
+    .agileits_social_list li a {
+        font-size: 1em;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .agileits_social_list li a {
+        font-size: 1em;
+    }
+
+    .agileits_social_list {
+        right: 5px;
+    }
+    
 }
 
 @media (max-width: 480px) {
@@ -4486,4 +4507,12 @@ footer.container {
         margin-top: 8px;
         font-size: 13px;        
     }
+    .agileits_social_list {
+        right: 5px;
+    }
 }
+
+
+
+
+

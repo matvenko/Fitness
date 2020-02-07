@@ -27,21 +27,19 @@ function countResult($tablename)
 		}
 
 	include("lang/".$lang.".php");
-	
 
 ?>	
 
-
-    <form method="post" id="testlang">
-    	<input type="hidden" name="lang" id="lang" />
-    </form>
+<form method="post" id="testlang">
+    <input type="hidden" name="lang" id="lang" />
+</form>
     
-    <script type="text/javascript">     
-		function changelang(lang){
-			document.getElementById("lang").value=lang;
-			document.getElementById("testlang").submit();
-		}
-    </script>    
+<script type="text/javascript">     
+	function changelang(lang){
+		document.getElementById("lang").value=lang;
+		document.getElementById("testlang").submit();
+	}
+</script>    
     
 
 	
